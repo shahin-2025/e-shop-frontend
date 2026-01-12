@@ -19,6 +19,7 @@ import RoleRoute from './routes/RoleRoute'
 import CoustomerLayout from './layouts/CoustomerLayout'
 import CategoryProducts from './pages/CategoryProducts'
 import SingleProducts from './pages/SingleProducts'
+import Settings from './pages/dashboard/Settings'
 
 const router = createBrowserRouter([
   { path: '/',
@@ -75,6 +76,14 @@ const router = createBrowserRouter([
         element: (
           <RoleRoute allowedRoles={['ADMIN']}>
             <Users />
+          </RoleRoute>
+        )
+      },
+      {
+        path: 'settings',
+        element: (
+          <RoleRoute allowedRoles={['ADMIN']}>
+            <Settings />
           </RoleRoute>
         )
       }
